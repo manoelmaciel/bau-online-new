@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mysql = require('mysql');
+var connection = require('express-myconnection');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -18,6 +20,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+  connection(mysql,{
+    host: 'localhost',
+    user: 'root',
+    password : 'tudobem',
+    port : 3306,
+    database:'devmedia_bau'
+  },'request')
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
