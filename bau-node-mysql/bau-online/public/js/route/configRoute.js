@@ -7,7 +7,7 @@ angular.module('contact').config(function ($routeProvider, $locationProvider) {
 
   $locationProvider.hashPrefix('');
 
-  $routeProvider.when('/contacts', {
+  $routeProvider.when('/musicas', {
     templateUrl: 'partials/contacts.html',
     controller: 'contactsCtrl'
   });
@@ -22,7 +22,7 @@ angular.module('contact').config(function ($routeProvider, $locationProvider) {
     controller: 'contactCtrl'
   });
   
-  $routeProvider.otherwise({ redirectTo: '/contacts' });
+  $routeProvider.otherwise({ redirectTo: '/musicas' });
 
 });
 

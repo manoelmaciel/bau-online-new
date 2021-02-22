@@ -16,12 +16,13 @@ angular.module("contact").controller("contactsCtrl", function ($scope, $http) {
   }
 
   var loadContacts = function () {
-    // console.log ("Load contacts ... !");
-    $http.get("/contacts").then(success, error);
+    console.log ("Load contacts ... !");
+    $http.get("/musicas").then(success, error);
   }
 
   var success = function (contact) {
     $scope.contacts = contact.data;
+    // console.log (contacts[0].titulo)
     // $scope.message.text = "Teste ... !"
   }
 
