@@ -12,17 +12,24 @@
 <hr>
 <table class="table table-striped table-responsive">
   <thead>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Action</th>
+    <th>Música</th>
+    <th>Álbum</th>
+    <th>Cantor</th>
+    <th>Ano</th>
   </thead>
   <tbody>
     <tr ng-repeat="contact in contacts">
       <td>
-        <a href="#/contact/{{contact._id}}" title="Click to edit">{{contact.titulo}}</a>
+        <a href="#/musicas/{{contact.id}}" title="Click to edit">{{contact.titulo}}</a>
       </td>
       <td>
-        <a href="#/contact/{{contact._id}}" title="Click to edit">{{contact.email}}</a>
+        <a href="#/contact/{{contact.id}}" title="Click to edit">{{contact.album}}</a>
+      </td>
+      <td>
+        <a href="#/contact/{{contact.id}}" title="Click to edit">{{contact.cantor}}</a>
+      </td>
+      <td>
+        <a href="#/contact/{{contact.id}}" title="Click to edit">{{contact.ano}}</a>
       </td>
       <td>
         <button class="btn btn-danger" ng-click="remove(contact)">Delete</button>

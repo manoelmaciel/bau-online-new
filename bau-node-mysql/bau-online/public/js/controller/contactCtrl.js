@@ -29,7 +29,7 @@ angular.module('contact').controller('contactCtrl', function ($scope, $routePara
   }
 
   $scope.salvar = function (contact) {
-    if (!contact._id) {
+    if (!contact.id) {
       criarNovoContato(contact);
     } else {
       atualizarContato(contact);
@@ -37,7 +37,7 @@ angular.module('contact').controller('contactCtrl', function ($scope, $routePara
   }
 
   var criarNovoContato = function (contact) {
-    var url = '/contacts';
+    var url = '/musica';
     $http.post(url, contact).then(listar, error);
   }
 
