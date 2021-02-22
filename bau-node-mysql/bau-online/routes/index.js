@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET /notas */
+/* GET /musicas */
 router.get('/musicas', function(req, res, next) {
   // console.log('Banco ...')
   req.getConnection((err, connection) => {
