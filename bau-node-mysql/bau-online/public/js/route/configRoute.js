@@ -12,7 +12,7 @@ angular.module('contact').config(function ($routeProvider, $locationProvider) {
     controller: 'contactsCtrl'
   });
 
-  $routeProvider.when('/contact', {
+  $routeProvider.when('/musica', {
     templateUrl: 'partials/contact.html',
     controller: 'contactCtrl'
   });
