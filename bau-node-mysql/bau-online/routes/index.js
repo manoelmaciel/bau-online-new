@@ -1,18 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET ... /musicas -- retorna todas as músicas do banco! */
 router.get('/musicas', function(req, res, next) {
-  console.log('Banco ...')
   req.getConnection((err, connection) => {
+    if (err) { 
+      console.log(err)
+      return res.status(400).json('Error') } 
     connection.query('SELECT * FROM tb_musicas', [], (err, result) => {
-      if (err) {
-        return res.status(400).json(err)
-      } 
-      return res.status(200).json(result)
+      if (err) { 
+        console.log(err)
+        return res.status(400).json('Error') } 
+      return res.status(200).json(result) 
     })
   });
-  // res.render('index', { title: 'Express' });
 });
 
 module.exports = router;

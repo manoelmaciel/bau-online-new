@@ -21,13 +21,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
-  connection(mysql,{
+  connection(mysql, {
     host: 'localhost',
     user: 'root',
     password : 'tudobem',
     port : 3306,
     database:'devmedia_bau'
-  },'request')
+  }, 'request')
 );
 
 app.use('/', indexRouter);
